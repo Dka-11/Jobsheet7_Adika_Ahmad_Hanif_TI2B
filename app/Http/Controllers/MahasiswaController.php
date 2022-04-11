@@ -22,6 +22,16 @@ class MahasiswaController extends Controller
         ]);
     }
 
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+
+        $mahasiswa = Mahasiswa::where('nama', 'like', "%" . $keyword . "%")->paginate(3);
+        return view('mahasiswa.index', [
+            'mahasiswa' => $mahasiswa
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

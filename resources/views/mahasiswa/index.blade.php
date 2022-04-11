@@ -12,6 +12,18 @@
         </div>
     </div>
 
+    <div class="float-left m-sm-3" style="width: 65%">
+        <div class="col-md-6">
+            <form action="{{ route('search') }}" method="GET">
+                <div class="input-group mb-3">
+                    <input class="form-control" type="text" name="search" placeholder="Search Name"
+                        value="{{ request('search') }}" aria-describedby="button-addon2">
+                    <input type="submit" class="btn btn-secondary" style="display: inline;" value="Search">
+                </div>
+            </form>
+        </div>
+    </div>
+
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
