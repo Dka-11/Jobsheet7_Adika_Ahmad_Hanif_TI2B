@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mahasiswa extends Model
 {
-    use HasFactory;
+    // use HasFactory;
     protected $table = 'mahasiswa';
     protected $primaryKey = 'id_mahasiswa';
 
@@ -15,6 +15,9 @@ class Mahasiswa extends Model
         'Nim',
         'Nama',
         'Kelas',
-        'Jurusan'
+        'Jurusan',
+        'Email',
+        'Alamat',
+        'Tgl_lahir'
     ];
 }

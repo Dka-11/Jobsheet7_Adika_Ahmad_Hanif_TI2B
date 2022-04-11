@@ -46,7 +46,10 @@ class MahasiswaController extends Controller
             'Nim' => 'required',
             'Nama' => 'required',
             'Kelas' => 'required',
-            'Jurusan' => 'required'
+            'Jurusan' => 'required',
+            'Email' => 'required',
+            'Alamat' => 'required',
+            'Tgl_lahir' => 'required',
         ]);
         // End Validasi Data
 
@@ -95,7 +98,10 @@ class MahasiswaController extends Controller
             'Nim' => 'required',
             'Nama' => 'required',
             'Kelas' => 'required',
-            'Jurusan' => 'required'
+            'Jurusan' => 'required',
+            'Email' => 'required',
+            'Alamat' => 'required',
+            'Tgl_lahir' => 'required'
         ]);
 
         Mahasiswa::where('nim', $Nim)->update($request->except(['_token', '_method'])); //Mengambil semua data untuk di edit/update
