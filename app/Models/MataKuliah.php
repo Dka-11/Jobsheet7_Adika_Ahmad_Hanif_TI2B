@@ -5,15 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kelas extends Model
+class MataKuliah extends Model
 {
-    use HasFactory;
-    protected $table = 'kelas';
-
-    public function mahasiswa()
-    {
-        return $this->hasMany(Mahasiswa::class);
-    }
+    // use HasFactory;
+    protected $table = 'matakuliah';
 
     public function mahasiswa_matakuliah()
     {
