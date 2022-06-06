@@ -36,6 +36,7 @@
             <th>Nama</th>
             <th>Kelas</th>
             <th>Jurusan</th>
+            <th width="50px">Foto</th>
             <th>Email</th>
             <th>Alamat</th>
             <th>Tanggal Lahir</th>
@@ -47,6 +48,7 @@
                 <td>{{ $mhs->nama }}</td>
                 <td>{{ $mhs->kelas->nama_kelas }}</td>
                 <td>{{ $mhs->jurusan }}</td>
+                <td><img width="150px" src="{{ asset('storage/' . $mhs->featured_image) }}"></td>
                 <td>{{ $mhs->email }}</td>
                 <td>{{ $mhs->alamat }}</td>
                 <td>{{ date('d-m-Y', strtotime($mhs->tgl_lahir)) }}</td>
