@@ -8,6 +8,7 @@ use App\Models\Mahasiswa_Matakuliah;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use PDF;
 
 class MahasiswaController extends Controller
 {
@@ -190,5 +191,16 @@ class MahasiswaController extends Controller
             ->where('id_mahasiswa', $id_mhs)->first();
 
         return view('mahasiswa.nilai', compact('mhsMatkul'));
+    }
+
+    public function cetakKhs($idMhs)
+    {
+        $mhsMatkul = Mahasiswa_MataKuliah::with('matakuliah')
+            ->where('mahasiswa_id', $idMhs)->get();
+        $mhsMatkul->mahasiswa = Mahasiswa::with('kelas')
+            ->where('id_mahasiswa', $idMhs)->first();
+
+        $cetakKHS = PDF::loadview('mahasiswa.cetakKhs', compact('mhsMatkul'));
+        return $cetakKHS->stream();
     }
 }
